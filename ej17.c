@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
 
     int handler1 = open(argv[1], O_RDWR);
 
-    int handler2 = open(argv[2], O_CREAT | O_RDWR, 0600);
+    int handler2 = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0600);
 
     do{
         leido = read(handler1, buffer, BLOQUE);
@@ -21,4 +21,6 @@ int main(int argc, char *argv[])
     close(handler1);
 
     close(handler2);
+
+    return 0;
 }
