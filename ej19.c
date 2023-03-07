@@ -16,7 +16,7 @@ int main(){
 
         read(tubo[0], &abuelo, sizeof(abuelo));
         
-        printf("[H] Mi padre = %d , yo = %d , mi abuelo = %d", padre, hijo, abuelo);
+        printf("[H] Mi padre = %d , yo = %d , mi abuelo = %d", padre, getpid(), abuelo);
     } else{
         int padre = getppid();
         abuelo = padre;

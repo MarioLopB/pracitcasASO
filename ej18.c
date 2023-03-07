@@ -12,9 +12,9 @@ int main(){
     __pid_t hijo = fork();
 
     if(hijo == 0){
-        write(tubo[1], entrada, sizeof(entrada));
+        write(tubo[1], &entrada, sizeof(entrada));
     } else{
-        int n = read(tubo[0], salida, sizeof(salida));
+        int n = read(tubo[0], &salida, sizeof(salida));
         printf("Ha leido %d caracteres y son: %s", n,  salida);
     }
 
